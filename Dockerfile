@@ -1,4 +1,4 @@
-FROM nginx:1.25.3-alpine
+FROM docker.io/nginx:1.25.3-alpine
 
 ## Copy our default nginx config
 COPY nginx/default.conf /etc/nginx/conf.d/
