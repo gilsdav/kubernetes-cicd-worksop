@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: gilsdav-pizza
+spec:
+  type: ClusterIP
+  selector:
+    app: gilsdav-pizza
+  ports:
+  - port: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gilsdav-pizza
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: gilsdav-pizza
+  template:
+    metadata:
+      labels:
+        app: gilsdav-pizza
+    spec:
+      containers:
+      - name: gilsdav-pizza
+        image: harbor.192.168.0.216.nip.io/gilsdav/pizza:v1
+        ports:
+        - containerPort: 80
