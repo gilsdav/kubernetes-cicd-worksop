@@ -25,6 +25,6 @@ spec:
     spec:
       containers:
       - name: gilsdav-pizza
-        image: harbor.192.168.0.216.nip.io/gilsdav/pizza:v1
+        image: harbor.192.168.0.216.nip.io/gilsdav/pizza:v2
         ports:
         - containerPort: 80
